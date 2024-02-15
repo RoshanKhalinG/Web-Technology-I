@@ -10,6 +10,9 @@
         var password = document.getElementById("pass").value.trim();
         var email = document.getElementById("email").value.trim();
         var contactNO = document.getElementById("contact").value.trim();
+        var gender = document.querySelector('input[name="gender"]:checked');
+        var facultyCheckboxes = document.querySelectorAll('input[name="faculty"]:checked');
+        var admissionYear = document.querySelector('select').value.trim();
 
 
     //     if (!username || !email || !password) {
@@ -27,14 +30,15 @@
            return;
         }
 
-        // if (contact.length < 10) {
-        //     alert('Contact number must be at least 10 characters long.');
-        //     return false;
-        // }
+        if (contactNO.length < 10) {
+            alert('Contact number must be at least 10 characters long.');
+            return false;
+        }
 
-        if (contactNO.length !== 10 || isNaN(contact)) {
-        alert("Mobile number should be exactly 10 digits.");
-    }
+    //     if (contactNO.length !== 10 || isNaN(contact)) {
+    //     alert("Mobile number should be exactly 10 digits.");
+    //     return false;
+    // }
 
         if (password=="") {
            alert("Enter pw");
@@ -46,6 +50,19 @@
         return;
     }
 
+    if (!gender) {
+        alert("Please select your gender!");
+        return false;
+    }
+    if (facultyCheckboxes.length === 0) {
+        alert("Please select at least one faculty!");
+        return false;
+    }
+    if (admissionYear === 0) {
+        alert("Please select admission year!");
+        return;
+    }
+    alert('Form submitted successfully!');
     
 }
     
@@ -63,6 +80,26 @@
         <br><br>
         <input type="password" id="pass" placeholder="Password">
         <br><br>
+        Gender:
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other
+        <br><br>
+
+        Faculty:
+        <input type="checkbox" name="faculty" value="BBA"> BBA
+        <input type="checkbox" name="faculty" value="BBA-TT"> BBA-TT
+        <input type="checkbox" name="faculty" value="BCA"> BCA
+        <br><br>
+
+        Adminsion year :
+            <select >
+            <option >2021</option>
+            <option value="" >2022</option>
+            <option value="" >2023</option>
+            <option value="" >2024</option>
+            </select><br><br>
+
         <button type="submit">Submit</button>
         <button type="reset">Reset</button>
     </form>
