@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    function Validation(){
+        var username = document.getElementById("user").value.trim();
+        var password = document.getElementById("pass").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var contactNO = document.getElementById("contact").value.trim();
+
+
+    //     if (!username || !email || !password) {
+    //     alert('Please fill in all fields.');
+    //     return;
+    //    } 
+
+        if (username=="") {
+            alert("Blank space not allowed!!!!");
+            return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+           alert("Invalid Email!!!!");
+           return;
+        }
+
+        // if (contact.length < 10) {
+        //     alert('Contact number must be at least 10 characters long.');
+        //     return false;
+        // }
+
+        if (contactNO.length !== 10 || isNaN(contact)) {
+        alert("Mobile number should be exactly 10 digits.");
+    }
+
+        if (password=="") {
+           alert("Enter pw");
+            return;
+        }
+
+        if (password.length < 6) {
+        alert('Password must be at least 6 characters long.');
+        return;
+    }
+
+    
+}
+    
+</script>
+</head>
+<body>
+    <form onsubmit="return Validation()">
+        <input type="text" id="user" placeholder="Username">
+        <br><br>
+        <input type="email" id="email" placeholder="Email">
+        <br><br>
+        <!-- <input type="number" id="contact" placeholder="Contact Number">
+        <br><br> -->
+        <input type="tel" id="contact" placeholder="Contact Number" >
+        <br><br>
+        <input type="password" id="pass" placeholder="Password">
+        <br><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
