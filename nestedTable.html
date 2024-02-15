@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Table Example</title>
+    <style>
+        /* Optional: Add some basic styling */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Nested Table Example</h2>
+    <table>
+        <tr>
+            <th>Main Table Header 1</th>
+            <th>Main Table Header 2</th>
+            <th>Main Table Header 3</th>
+        </tr>
+        <tr>
+            <td>Main Table Data 1</td>
+            <td>Main Table Data 2</td>
+            <td>Main Table Data 3</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <h3>Nested Table</h3>
+                <table>
+                    <tr>
+                        <th>Nested Table Header 1</th>
+                        <th>Nested Table Header 2</th>
+                    </tr>
+                    <tr>
+                        <td>Nested Table Data 1</td>
+                        <td>Nested Table Data 2</td>
+                    </tr>
+                    <tr>
+                        <td>Nested Table Data 3</td>
+                        <td>Nested Table Data 4</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>Main Table Data 4</td>
+            <td>Main Table Data 5</td>
+            <td>Main Table Data 6</td>
+        </tr>
+    </table>
+</body>
+</html>
