@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>contact information</title>
+
+   </head>
+   <body>
+      <fieldset>
+         <legend>Contact information</legend>
+     <form onsubmit="return validateform()">
+      <label for ="name">Name</label>
+      <input type="text" id="name" name ="name" required><br>
+      <br>
+      <label for ="phone">Phone</label>
+      <input type="tel" id="phone" name ="phone"required><br>
+      <br>
+
+      <label for ="email">Email</label>
+      <input type="email" id="email" name ="email" required><br>
+
+      <br>
+      <input type ="reset" id="reset">
+      <input type ="submit" id="submit">
+     </form>
+     </fieldset>
+   
+   <script>
+      function validateform(){
+         var name =document.getElementById("name").value;
+       var phone = document.getElementById("phone").value;
+       var email = document.getElementById("email").value;
+
+       if(name===" "||phone===" "||email===" "){
+         alert("Please fill all the fields");
+         return false;
+       }
+       if(phone.length<10){
+         alert("enter valid phone number");
+         return false;
+       }
+       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+         alert("Invalid Email!!!!");
+         return false;
+      }
+       alert('sucessfully submitted');
+      return false;
+      }
+
+   </script>
+</body>
+</html>
