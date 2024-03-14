@@ -12,7 +12,7 @@
         var contactNO = document.getElementById("contact").value.trim();
         var gender = document.querySelector('input[name="gender"]:checked');
         var facultyCheckboxes = document.querySelectorAll('input[name="faculty"]:checked');
-        var admissionYear = document.querySelector('select').value.trim();
+        var admissionYear = document.querySelector('select');
 
 
     //     if (username==="" || email==="" || password===) {
@@ -58,7 +58,7 @@
         alert("Please select at least one faculty!");
         return false;
     }
-    if (admissionYear === 0) {
+    if (admissionYear === "") {
         alert("Please select admission year!");
         return;
     }

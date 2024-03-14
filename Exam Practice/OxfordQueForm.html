@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return validationForm()">
+       Name : <input type="text" id="user">
+              <br>
+       Sex : <input type="radio" name="gender" value="male">Male
+             <input type="radio" name="gender" value="female">Female
+             <br>
+       Country : <select id="country">
+                    <option value=""> Select your Country</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="China">China</option>
+                    <option value="USA">USA</option>
+                    <option value="Australia">Australia</option>
+                 </select><br>
+       Message : <br>
+       <textarea name="text" id="text" cols="30" rows="5"></textarea> 
+       <br>
+       <input type="checkbox" name="area" value="subscription"> Subscribe?
+
+       <button type="submit">Submit</button>
+    </form>
+
+    
+</body>
+<script>
+    function validationForm() {
+        var name = document.getElementById("user").value.trim();
+        var sex = document.querySelector('input[name="gender"]:checked');
+        var con = document.getElementById('country').value;
+        var subs = document.querySelectorAll('input[name="area"]:checked');
+        var msg = document.getElementById("text").value.trim();
+
+        if(name === ""){
+            alert('Name must be filled');
+            return false;
+        }
+        if(!sex){
+            alert('Please select your Gender');
+            return false;
+        }
+        if(con === ""){
+            alert('Select Country');
+            return false;
+        }
+        if(msg.length === 0){
+            alert("Type something");
+            return false;
+        }
+        alert('Submission Successful');
+        return false;
+    }
+</script>
+</html>
