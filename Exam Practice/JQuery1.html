@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery DOM Manipulation Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<p id="demo">This is a paragraph.</p>
+
+<button id="changeText">Change Text</button>
+<button id="changeStyle">Change Style</button>
+<button id="appendText">Append Text</button>
+
+<script>
+$(document).ready(function() {
+  $('#changeText').click(function() {
+    $('#demo').text('Text changed!');
+  });
+  
+  $('#changeStyle').click(function() {
+    $('#demo').css('color', 'red');
+    $('#demo').css('font-weight', 'bold');
+  });
+  
+  $('#appendText').click(function() {
+    $('#demo').append(' More text!');
+  });
+});
+</script>
+
+</body>
+</html>
