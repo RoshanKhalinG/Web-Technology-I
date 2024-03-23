@@ -30,7 +30,7 @@
            return;
         }
 
-        if (contactNO.length < 10 || isNaN(contactNO)) {
+        if (contactNO.length !== 10 || isNaN(contactNO)) {
             alert('Contact number must be at least 10 characters long.');
             return false;
         }
